@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#page#task#registerTask.xhtml"
+  PATH="/page/task/registerTask.xhtml" SHAPE="95,94,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#page#task#registerTask.xhtml:0" NAME="item"
+   PATH="/page/task/registerTask.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="index::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="443,142,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="registerTask::#page#task#registerTask.xhtml"
+    NAME="output" PATH="/page/task/registerTask.xhtml"
+    TARGET="rules:#page#task#registerTask.xhtml" TITLE="registerTask" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

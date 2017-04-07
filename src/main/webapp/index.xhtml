@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+        <h1>Crud Task!</h1>
+
+        <h:form id="reg">
+          <h:commandButton id="adicionar"
+                        action="#{taskController.addTask()}"
+                        value="Adicionar" styleClass="register" />
+        <h:dataTable var="_member" value="#{members}"
+            rendered="#{not empty members}"
+            styleClass="simpletablestyle">
+            
+            <h:column>
+                <f:facet name="header">Editar</f:facet>
+                <h:commandButton id="editar"
+                        action="#{taskController.editTask(_member)}"
+                        value="Edit" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{_member.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Titulo</f:facet>
+                #{_member.titulo}
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Status</f:facet>
+                #{_member.statustask.label}
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Data Criação</f:facet>
+                #{_member.dataCriacao}
+            </h:column>
+            
+             <h:column>
+                <f:facet name="header">Remover</f:facet>
+                <h:commandButton id="remover"
+                        action="#{taskController.removeTask(_member)}"
+                        value="Remove"  />
+            </h:column>
+           
+        </h:dataTable>
+
+        </h:form>
+
+        <h2>Tasks</h2>
+        <h:panelGroup rendered="#{empty members}">
+            <em>No registered members.</em>
+        </h:panelGroup>
+            REST URL para todas as tasks: <a
+                    href="#{request.contextPath}/rest/tasks/all">CLIQUE AQUI</a>
+    </ui:define>
+</ui:composition>
